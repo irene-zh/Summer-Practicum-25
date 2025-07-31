@@ -1,0 +1,157 @@
+---
+title: "regression hannah"
+output: html_document
+date: "2025-07-25"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+packages
+```{r}
+library(tidyverse)
+library(readr)
+library(dplyr)
+```
+
+read in data
+```{r, message=FALSE, warning=FALSE}
+training_regression <- read_csv("D:/Summer Practicum/1_Data/training_regression3.csv")
+
+train_sel = training_regression %>%
+  select('ArrDel15', 'Operating_Airline', 'Is_Holiday_Week', 'DayOfWeek', 'hour_of_day', 'Region', "Size_Class", 'DistanceGroup') %>%
+  replace(is.na(.), 0)
+
+train_sel$DayOfWeek = factor(train_sel$DayOfWeek)
+train_sel$DistanceGroup = factor(train_sel$DistanceGroup)
+train_sel$Is_Holiday_Week = factor(train_sel$Is_Holiday_Week)
+train_sel$hour_of_day = factor(train_sel$hour_of_day)
+train_sel$Size_Class = factor(train_sel$Size_Class)
+train_sel$Region = factor(train_sel$Region)
+```
+
+forward selection
+```{r}
+train_sel = training_regression %>%
+  select('ArrDel15', 'Is_Holiday_Week', 'DayOfWeek', 'hour_of_day', 'Region', 'DistanceGroup') %>%
+  replace(is.na(.), 0)
+
+train_sel$DayOfWeek = factor(train_sel$DayOfWeek)
+# Create full model and empty model
+full.model <- glm(ArrDel15 ~ . , data = train_sel, family="binomial")
+empty.model <- glm(ArrDel15 ~ 1, data = train_sel, family="binomial")
+# k = 2 for AIC selection
+for.model <- step(empty.model,
+scope = list(lower = empty.model,
+upper = full.model),
+direction = "forward", k = 2)
+```
+
+forward selection all 3
+```{r}
+train_sel_all3 <- train_sel[train_sel$Operating_Airline == "B6" | train_sel$Operating_Airline == "F9" | train_sel$Operating_Airline == "G4", ]
+train_sel_all3 = train_sel_all3 %>%
+  select('ArrDel15', 'Is_Holiday_Week', 'DayOfWeek', 'Size_Class', 'DistanceGroup', 'Region', 'hour_of_day') %>%
+  replace(is.na(.), 0)
+train_sel_all3$DayOfWeek = factor(train_sel_all3$DayOfWeek)
+
+# Create full model and empty model
+full.model <- glm(ArrDel15 ~ . , data = train_sel_all3, family="binomial")
+empty.model <- glm(ArrDel15 ~ 1, data = train_sel_all3, family="binomial")
+# k = 2 for AIC selection
+for.model <- step(empty.model,
+scope = list(lower = empty.model,
+upper = full.model),
+direction = "forward", k = 2)
+```
+
+
+
+
+forward selection b6
+```{r}
+train_sel_b6 <- train_sel[train_sel$Operating_Airline == "B6", ]
+train_sel_b6 = train_sel_b6 %>%
+  select('ArrDel15', 'Is_Holiday_Week', 'DayOfWeek', 'Size_Class', 'DistanceGroup', 'Region', 'hour_of_day') %>%
+  replace(is.na(.), 0)
+
+# Create full model and empty model
+full.model <- glm(ArrDel15 ~ . , data = train_sel_b6, family="binomial")
+empty.model <- glm(ArrDel15 ~ 1, data = train_sel_b6, family="binomial")
+# k = 2 for AIC selection
+for.model <- step(empty.model,
+scope = list(lower = empty.model,
+upper = full.model),
+direction = "forward", k = 2)
+```
+
+
+forward selection f9
+```{r}
+train_sel_f9 <- train_sel[train_sel$Operating_Airline == "F9", ]
+train_sel_f9 = train_sel_f9 %>%
+  select('ArrDel15', 'Is_Holiday_Week', 'DayOfWeek', "Size_Class", 'DistanceGroup', 'Region', 'hour_of_day') %>%
+  replace(is.na(.), 0)
+
+# Create full model and empty model
+full.model <- glm(ArrDel15 ~ . , data = train_sel_f9, family="binomial")
+empty.model <- glm(ArrDel15 ~ 1, data = train_sel_f9, family="binomial")
+# k = 2 for AIC selection
+for.model <- step(empty.model,
+scope = list(lower = empty.model,
+upper = full.model),
+direction = "forward", k = 2)
+```
+
+
+forward selection g4
+```{r}
+train_sel_g4 <- train_sel[train_sel$Operating_Airline == "G4", ]
+train_sel_g4 = train_sel_g4 %>%
+  select('ArrDel15', 'Is_Holiday_Week', 'DayOfWeek', "Size_Class", 'DistanceGroup', 'Region' , 'hour_of_day') %>%
+  replace(is.na(.), 0)
+
+# Create full model and empty model
+full.model <- glm(ArrDel15 ~ . , data = train_sel_g4, family="binomial")
+empty.model <- glm(ArrDel15 ~ 1, data = train_sel_g4, family="binomial")
+# k = 2 for AIC selection
+for.model <- step(empty.model,
+scope = list(lower = empty.model,
+upper = full.model),
+direction = "forward", k = 2)
+```
+
+
+
+
+
+forward selection b6
+```{r}
+train_sel_b6 <- train_sel[train_sel$Operating_Airline == "B6", ]
+
+# Create full model and empty model
+full.model <- glm(ArrDel15 ~ . , data = train_sel_b6, family="binomial")
+empty.model <- glm(ArrDel15 ~ 1, data = train_sel_b6, family="binomial")
+# k = 2 for AIC selection
+for.model <- step(empty.model,
+scope = list(lower = empty.model,
+upper = full.model),
+direction = "forward", k = 2)
+```
+
+
+
+
+ridge regression
+```{r}
+train_x <- model.matrix(ArrDel15 ~ ., data = train_sel)[, -1]
+train_y <- train_sel$ArrDel15
+
+library(glmnet)
+train_ridge <- glmnet(x = train_x,  y = train_y, family = "binomial", alpha = 1) #need to say alpha=0 to do ridge regression!!
+plot(train_ridge)
+coef(train_ridge)
+
+```
+

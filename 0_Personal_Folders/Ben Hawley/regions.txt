@@ -1,0 +1,9 @@
+West:
+
+["WA", "CA", "OR", "MT", "ID", "WY", "NV", "UT", 
+"CO", "AZ", "NM", "AK", "HI"]
+
+South: ["TX", "OK", "AR", "LA", "MS", "AL", "TN", "KY",
+"FL", "GA", "SC", "NC", "VA"
+
+Northeast: ["

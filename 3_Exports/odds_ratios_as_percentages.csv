@@ -1,0 +1,57 @@
+,0
+Intercept,87.13302993365811
+"C(Operating_Airline, Treatment('AS'))[T.AA]",15.753487368807306
+"C(Operating_Airline, Treatment('AS'))[T.B6]",52.881684242734586
+"C(Operating_Airline, Treatment('AS'))[T.DL]",-27.15759449541374
+"C(Operating_Airline, Treatment('AS'))[T.F9]",50.57315608078441
+"C(Operating_Airline, Treatment('AS'))[T.G4]",79.09494863198194
+"C(Operating_Airline, Treatment('AS'))[T.HA]",75.7814943039985
+"C(Operating_Airline, Treatment('AS'))[T.NK]",18.735144854162456
+"C(Operating_Airline, Treatment('AS'))[T.UA]",-10.299351801223688
+"C(Operating_Airline, Treatment('AS'))[T.WN]",21.402406608698566
+C(DistanceGroup)[T.2],0.2198731053088654
+C(DistanceGroup)[T.3],10.413358160101671
+C(DistanceGroup)[T.4],19.052499339776354
+C(DistanceGroup)[T.5],30.14171384589668
+C(DistanceGroup)[T.6],18.500482381775818
+C(DistanceGroup)[T.7],18.26915769284203
+C(DistanceGroup)[T.8],5.8872905804122855
+C(DistanceGroup)[T.9],-0.05041212935507078
+C(DistanceGroup)[T.10],-0.15406134921078785
+C(DistanceGroup)[T.11],-2.6049311721651813
+C(Is_Holiday)[T.True],4.685387208603764
+C(DayOfWeek)[T.2],-14.469051531231669
+C(DayOfWeek)[T.3],-3.0017261390205996
+C(DayOfWeek)[T.4],9.064439306258155
+C(DayOfWeek)[T.5],21.025755165372484
+C(DayOfWeek)[T.6],4.99994604776548
+C(DayOfWeek)[T.7],8.420841686987025
+C(hour_of_day)[T.2.0],64.23942221084732
+C(hour_of_day)[T.3.0],-14.115441531400752
+C(hour_of_day)[T.4.0],-98.61870139198561
+C(hour_of_day)[T.5.0],-98.19789566113865
+C(hour_of_day)[T.6.0],-96.48345568579147
+C(hour_of_day)[T.7.0],-94.65405076341273
+C(hour_of_day)[T.8.0],-93.69057866955168
+C(hour_of_day)[T.9.0],-91.74864826053629
+C(hour_of_day)[T.10.0],-91.44004479117432
+C(hour_of_day)[T.11.0],-89.78713759505443
+C(hour_of_day)[T.12.0],-88.81177138636073
+C(hour_of_day)[T.13.0],-87.31487207528
+C(hour_of_day)[T.14.0],-85.42084116411452
+C(hour_of_day)[T.15.0],-84.10503514761086
+C(hour_of_day)[T.16.0],-82.90613401555956
+C(hour_of_day)[T.17.0],-82.39282449986447
+C(hour_of_day)[T.18.0],-82.14436950080824
+C(hour_of_day)[T.19.0],-79.74760501628906
+C(hour_of_day)[T.20.0],-77.38040008680281
+C(hour_of_day)[T.21.0],-74.80511576362585
+C(hour_of_day)[T.22.0],-71.97017232596146
+C(hour_of_day)[T.23.0],-56.23891818439003
+C(hour_of_day)[T.24.0],-37.27043141640621
+"C(Region, Treatment('South'))[T.Midwest]",2.788852204521941
+"C(Region, Treatment('South'))[T.Northeast]",14.86380355606951
+"C(Region, Treatment('South'))[T.West]",-2.0162125380554397
+C(Size_Class)[T.Medium Hub],-9.045515268463667
+C(Size_Class)[T.Non Hub],-2.449035864163285
+C(Size_Class)[T.Small Hub],-11.032430538395277

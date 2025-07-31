@@ -1,0 +1,57 @@
+,0
+Intercept,1.871330299336581
+"C(Operating_Airline, Treatment('AS'))[T.AA]",1.157534873688073
+"C(Operating_Airline, Treatment('AS'))[T.B6]",1.5288168424273458
+"C(Operating_Airline, Treatment('AS'))[T.DL]",0.7284240550458626
+"C(Operating_Airline, Treatment('AS'))[T.F9]",1.505731560807844
+"C(Operating_Airline, Treatment('AS'))[T.G4]",1.7909494863198194
+"C(Operating_Airline, Treatment('AS'))[T.HA]",1.757814943039985
+"C(Operating_Airline, Treatment('AS'))[T.NK]",1.1873514485416246
+"C(Operating_Airline, Treatment('AS'))[T.UA]",0.8970064819877631
+"C(Operating_Airline, Treatment('AS'))[T.WN]",1.2140240660869857
+C(DistanceGroup)[T.2],1.0021987310530887
+C(DistanceGroup)[T.3],1.1041335816010167
+C(DistanceGroup)[T.4],1.1905249933977635
+C(DistanceGroup)[T.5],1.3014171384589668
+C(DistanceGroup)[T.6],1.1850048238177582
+C(DistanceGroup)[T.7],1.1826915769284203
+C(DistanceGroup)[T.8],1.0588729058041229
+C(DistanceGroup)[T.9],0.9994958787064493
+C(DistanceGroup)[T.10],0.9984593865078921
+C(DistanceGroup)[T.11],0.9739506882783482
+C(Is_Holiday)[T.True],1.0468538720860376
+C(DayOfWeek)[T.2],0.8553094846876833
+C(DayOfWeek)[T.3],0.969982738609794
+C(DayOfWeek)[T.4],1.0906443930625815
+C(DayOfWeek)[T.5],1.2102575516537248
+C(DayOfWeek)[T.6],1.0499994604776548
+C(DayOfWeek)[T.7],1.0842084168698702
+C(hour_of_day)[T.2.0],1.6423942221084733
+C(hour_of_day)[T.3.0],0.8588455846859925
+C(hour_of_day)[T.4.0],0.013812986080143974
+C(hour_of_day)[T.5.0],0.018021043388613555
+C(hour_of_day)[T.6.0],0.03516544314208525
+C(hour_of_day)[T.7.0],0.053459492365872656
+C(hour_of_day)[T.8.0],0.06309421330448321
+C(hour_of_day)[T.9.0],0.08251351739463716
+C(hour_of_day)[T.10.0],0.08559955208825683
+C(hour_of_day)[T.11.0],0.10212862404945561
+C(hour_of_day)[T.12.0],0.11188228613639264
+C(hour_of_day)[T.13.0],0.12685127924720013
+C(hour_of_day)[T.14.0],0.14579158835885472
+C(hour_of_day)[T.15.0],0.1589496485238914
+C(hour_of_day)[T.16.0],0.1709386598444045
+C(hour_of_day)[T.17.0],0.1760717550013553
+C(hour_of_day)[T.18.0],0.17855630499191763
+C(hour_of_day)[T.19.0],0.20252394983710947
+C(hour_of_day)[T.20.0],0.22619599913197186
+C(hour_of_day)[T.21.0],0.25194884236374143
+C(hour_of_day)[T.22.0],0.2802982767403854
+C(hour_of_day)[T.23.0],0.4376108181560997
+C(hour_of_day)[T.24.0],0.6272956858359379
+"C(Region, Treatment('South'))[T.Midwest]",1.0278885220452194
+"C(Region, Treatment('South'))[T.Northeast]",1.148638035560695
+"C(Region, Treatment('South'))[T.West]",0.9798378746194456
+C(Size_Class)[T.Medium Hub],0.9095448473153633
+C(Size_Class)[T.Non Hub],0.9755096413583672
+C(Size_Class)[T.Small Hub],0.8896756946160472
