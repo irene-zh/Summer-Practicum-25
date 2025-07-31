@@ -1,0 +1,4 @@
+Month, DayOfMonth, DayOfWeek,Operating_Airline,Origin, OriginCity, OriginState,Dest,DestCityName,
+DestState,DepTime,DepDelay,DepDel15,DepartureDelayGroups,TaxiOut,TaxiIn,ArrTime,ArrDelay,ArrDel15,
+ArrivalDelayGroups,Cancelled,Diverted,ActualElapsedTime,AirTime,Distance,DistanceGroup,
+CarrierDelay,WeatherDelay,NASDelay,SecurityDelay,LateAircraftDelay
